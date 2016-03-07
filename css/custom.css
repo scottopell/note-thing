@@ -1,0 +1,14 @@
+.note-editor {
+  height: 700px;
+  width: 100%;
+  font-family: monospace;
+  font-size: 1.2em;
+}
+
+.preview {
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  height: 700px;
+  width: 100%;
+  padding: 7px;
+}
