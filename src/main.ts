@@ -27,7 +27,7 @@ async function initLovefield(){
     .addColumn('type', lf.Type.STRING)
     .addColumn('created_at', lf.Type.DATE_TIME)
     .addColumn('modified_at', lf.Type.DATE_TIME)
-    .addPrimaryKey(['id'])
+    .addPrimaryKey(['id'], true)
     .addIndex('idxModified', ['modified_at'], false, lf.Order.DESC);
 
   let connectOptions = {};
@@ -40,7 +40,6 @@ async function initLovefield(){
 
 async function createNote(title, content){
   var row = noteTable.createRow({
-    'id' : 1,
     'title': title,
     'content': content,
     'type': 'markdown',
@@ -73,6 +72,7 @@ function registerEventListeners(){
       console.error(`ERROR SAVING NOTE "${title}: ${e}"`);
     }
     console.log("SAVED");
+
   });
 
   $("textarea").keydown(function(e) {
